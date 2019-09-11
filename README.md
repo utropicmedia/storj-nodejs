@@ -1,4 +1,4 @@
-# nodejs bindings for libuplink
+# node-storj bindings
 
 ## Initial Set-up
 
