@@ -14,6 +14,15 @@ Install [storj-uplink](https://godoc.org/storj.io/storj/lib/uplink) go package, 
 $ go get storj.io/storj/lib/uplink
 ```
 
+In case, following errors get reported during the process:
+```
+go/src/github.com/zeebo/errs/errs.go:42:9: undefined: errors.Unwrap
+go/src/github.com/zeebo/errs/group.go:84:6: undefined: errors.Is
+```
+please arrange for the module dependencies to be met, using the Go modules functionality.
+Reference: [ISSUE#3053: Getting error while downloading module](https://github.com/storj/storj/issues/3053#issuecomment-532883993)
+
+
 **NOTE**: for Nodejs 
 
 * Please ensure Node.js with version 10 or higher is [installed](https://nodejs.org/en/download/)
@@ -38,7 +47,10 @@ $ npm install storj-nodejs
 $ go build -o libuplinkc.so -buildmode=c-shared 
 ```
 
-* Copy *libuplinkc.so* file into the folder, where the sample *HelloStorj.js* file is copied
+* Either set a *.env* file (similar to *.env.example*), with full path to the shared object, as follows:
+```LIB_UPLINKC_PATH=/home/username/go/src/storj.io/storj/lib/uplinkc/libuplinkc.so```
+
+* OR copy *libuplinkc.so* file into the folder, where the sample *HelloStorj.js* file is copied
 
 
 ## Sample Hello Storj!
