@@ -16,7 +16,7 @@ $ go get storj.io/uplink-c
 * Please ensure GOPATH is set
 * Please ensure uplink-c is installed at following location 
 ```
-$ $GOPATH/go/src/
+$ $GOPATH/src/
 ```
 In case, following errors get reported during the process:
 ```
